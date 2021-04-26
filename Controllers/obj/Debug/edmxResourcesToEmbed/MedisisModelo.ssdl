@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SistemaMedicoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Consultorios">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Numero" Type="int" Nullable="false" />
+    <Property Name="Observaciones" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Especialidades">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Medicos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Apellidos" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Nombres" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Especialidad" Type="int" Nullable="false" />
+    <Property Name="Matricula" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MedicosConsultorios">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Medico" Type="int" Nullable="false" />
+    <Property Name="Consultorio" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MedicosPacientes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Medico" Type="int" Nullable="false" />
+    <Property Name="Paciente" Type="int" Nullable="false" />
+    <Property Name="UltimaFechaAtencion" Type="datetime" />
+    <Property Name="FechaSiguienteConsulta" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ObrasSociales">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Codigo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pacientes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Apellidos" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Nombres" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Telefono" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FechaNacimiento" Type="datetime" Nullable="false" />
+    <Property Name="ObraSocial" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SistemaMedico.dbo.listadoConsultas' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="listadoConsultas">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="Medico" />
+      <PropertyRef Name="Paciente" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="Medico" Type="varchar" MaxLength="102" Nullable="false" />
+    <Property Name="Paciente" Type="varchar" MaxLength="101" Nullable="false" />
+    <Property Name="UltimaFechaAtencion" Type="datetime" />
+    <Property Name="FechaSiguienteConsulta" Type="datetime" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SistemaMedico.dbo.ListadoMedicos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="ListadoMedicos">
+    <Key>
+      <PropertyRef Name="Nombre" />
+      <PropertyRef Name="Especialidad" />
+      <PropertyRef Name="Matricula" />
+    </Key>
+    <Property Name="Nombre" Type="varchar" MaxLength="101" Nullable="false" />
+    <Property Name="Especialidad" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Matricula" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="numeroPacientes" Type="int" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SistemaMedico.dbo.ListadoPacientes' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="ListadoPacientes">
+    <Key>
+      <PropertyRef Name="Nombre" />
+      <PropertyRef Name="Telefono" />
+      <PropertyRef Name="Email" />
+      <PropertyRef Name="FechaNacimiento" />
+      <PropertyRef Name="ObraSocial" />
+    </Key>
+    <Property Name="Nombre" Type="varchar" MaxLength="101" Nullable="false" />
+    <Property Name="Telefono" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FechaNacimiento" Type="datetime" Nullable="false" />
+    <Property Name="ObraSocial" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="numeroConsultas" Type="int" />
+  </EntityType>
+  <Association Name="FK_Medicos_Especialidades">
+    <End Role="Especialidades" Type="Self.Especialidades" Multiplicity="1" />
+    <End Role="Medicos" Type="Self.Medicos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Especialidades">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Medicos">
+        <PropertyRef Name="Especialidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MedicosConsultorios_Consultorios">
+    <End Role="Consultorios" Type="Self.Consultorios" Multiplicity="1" />
+    <End Role="MedicosConsultorios" Type="Self.MedicosConsultorios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Consultorios">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MedicosConsultorios">
+        <PropertyRef Name="Consultorio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MedicosConsultorios_Medicos">
+    <End Role="Medicos" Type="Self.Medicos" Multiplicity="1" />
+    <End Role="MedicosConsultorios" Type="Self.MedicosConsultorios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Medicos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MedicosConsultorios">
+        <PropertyRef Name="Medico" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MedicosPacientes_Medicos">
+    <End Role="Medicos" Type="Self.Medicos" Multiplicity="1" />
+    <End Role="MedicosPacientes" Type="Self.MedicosPacientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Medicos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MedicosPacientes">
+        <PropertyRef Name="Medico" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MedicosPacientes_Pacientes">
+    <End Role="Pacientes" Type="Self.Pacientes" Multiplicity="1" />
+    <End Role="MedicosPacientes" Type="Self.MedicosPacientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pacientes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MedicosPacientes">
+        <PropertyRef Name="Paciente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pacientes_ObrasSociales">
+    <End Role="ObrasSociales" Type="Self.ObrasSociales" Multiplicity="1" />
+    <End Role="Pacientes" Type="Self.Pacientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ObrasSociales">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pacientes">
+        <PropertyRef Name="ObraSocial" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SistemaMedicoModelStoreContainer">
+    <EntitySet Name="Consultorios" EntityType="Self.Consultorios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Especialidades" EntityType="Self.Especialidades" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Medicos" EntityType="Self.Medicos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MedicosConsultorios" EntityType="Self.MedicosConsultorios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MedicosPacientes" EntityType="Self.MedicosPacientes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ObrasSociales" EntityType="Self.ObrasSociales" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pacientes" EntityType="Self.Pacientes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="listadoConsultas" EntityType="Self.listadoConsultas" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [listadoConsultas].[id] AS [id], 
+    [listadoConsultas].[Medico] AS [Medico], 
+    [listadoConsultas].[Paciente] AS [Paciente], 
+    [listadoConsultas].[UltimaFechaAtencion] AS [UltimaFechaAtencion], 
+    [listadoConsultas].[FechaSiguienteConsulta] AS [FechaSiguienteConsulta]
+    FROM [dbo].[listadoConsultas] AS [listadoConsultas]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ListadoMedicos" EntityType="Self.ListadoMedicos" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ListadoMedicos].[Nombre] AS [Nombre], 
+    [ListadoMedicos].[Especialidad] AS [Especialidad], 
+    [ListadoMedicos].[Matricula] AS [Matricula], 
+    [ListadoMedicos].[numeroPacientes] AS [numeroPacientes]
+    FROM [dbo].[ListadoMedicos] AS [ListadoMedicos]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ListadoPacientes" EntityType="Self.ListadoPacientes" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ListadoPacientes].[Nombre] AS [Nombre], 
+    [ListadoPacientes].[Telefono] AS [Telefono], 
+    [ListadoPacientes].[Email] AS [Email], 
+    [ListadoPacientes].[FechaNacimiento] AS [FechaNacimiento], 
+    [ListadoPacientes].[ObraSocial] AS [ObraSocial], 
+    [ListadoPacientes].[numeroConsultas] AS [numeroConsultas]
+    FROM [dbo].[ListadoPacientes] AS [ListadoPacientes]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Medicos_Especialidades" Association="Self.FK_Medicos_Especialidades">
+      <End Role="Especialidades" EntitySet="Especialidades" />
+      <End Role="Medicos" EntitySet="Medicos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MedicosConsultorios_Consultorios" Association="Self.FK_MedicosConsultorios_Consultorios">
+      <End Role="Consultorios" EntitySet="Consultorios" />
+      <End Role="MedicosConsultorios" EntitySet="MedicosConsultorios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MedicosConsultorios_Medicos" Association="Self.FK_MedicosConsultorios_Medicos">
+      <End Role="Medicos" EntitySet="Medicos" />
+      <End Role="MedicosConsultorios" EntitySet="MedicosConsultorios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MedicosPacientes_Medicos" Association="Self.FK_MedicosPacientes_Medicos">
+      <End Role="Medicos" EntitySet="Medicos" />
+      <End Role="MedicosPacientes" EntitySet="MedicosPacientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MedicosPacientes_Pacientes" Association="Self.FK_MedicosPacientes_Pacientes">
+      <End Role="Pacientes" EntitySet="Pacientes" />
+      <End Role="MedicosPacientes" EntitySet="MedicosPacientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pacientes_ObrasSociales" Association="Self.FK_Pacientes_ObrasSociales">
+      <End Role="ObrasSociales" EntitySet="ObrasSociales" />
+      <End Role="Pacientes" EntitySet="Pacientes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

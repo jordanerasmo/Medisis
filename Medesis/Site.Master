@@ -1,0 +1,112 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Medesis.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head runat="server">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - Medisis</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="~/Scripts/Alertify%20JS/styles.css" rel="stylesheet" />
+    <link href="~/css/estilos.css" rel="stylesheet" type="text/css" />
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+    <form runat="server" id="formularioPrincipal">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+
+                <%--Referencias a scripts JS--%>
+                <asp:ScriptReference Path="~/Js/menu.js" />
+                <asp:ScriptReference Path="~/Js/consultas.js" />
+
+
+                <%--Referencias a librerias--%>
+                <asp:ScriptReference Path="~/Scripts/Alertify%20JS/alertify.min.js" />
+                <asp:ScriptReference Path="~/Scripts/DataTables/datatables.min.js" />
+                <asp:ScriptReference Path="~/Scripts/Moment/moment.min.js" />
+            </Scripts>
+        </asp:ScriptManager>
+
+        <div class="wrapper">
+   	        <nav id="sidebar">
+   		        <div class="sidebar-header">
+   			        <h3>Medisis</h3>
+   		        </div>
+   		
+   		        <ul class="list-unstyled components">
+
+                    <li class="active">
+                        <a runat="server" href="~/Index"> <i class="fas fa-home"></i> Inicio</a>
+                    </li>
+
+   			        <li>
+   				        <a href="#medicosSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> <i class="fas fa-user-md"></i> Medicos</a>
+   				        <ul class="collapse list-unstyled" id="medicosSubmenu">
+   					        <li> <a href="~/Vistas/Medicos/NuevoMedico" runat="server"> <i class="fas fa-plus"></i> Agregar</a> </li>
+   					        <li> <a href="~/Vistas/Medicos/ListadoMedicos" runat="server"> <i class="fas fa-eye"></i> Ver</a> </li>
+   				        </ul> 
+   			        </li>
+
+   			        <li>
+   				        <a href="#pacientesSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> <i class="fas fa-user-injured"></i> Pacientes</a>
+   				        <ul class="collapse list-unstyled" id="pacientesSubmenu">
+   					        <li> <a href="~/Vistas/Pacientes/NuevoPaciente" runat="server"> <i class="fas fa-plus"></i> Nuevo</a> </li>
+                            <li> <a href="~/Vistas/Pacientes/ListadoPacientes" runat="server"> <i class="fas fa-eye"></i> Ver</a> </li>
+   				        </ul> 
+   			        </li>
+
+                    <li>
+   				        <a href="#consultasSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> <i class="fas fa-book-medical"></i> Consultas</a>
+   				        <ul class="collapse list-unstyled" id="consultasSubmenu">
+   					        <li> <a href="~/Vistas/Consultas/NuevaConsulta" runat="server"> <i class="fas fa-plus"></i> Nueva</a> </li>
+                            <li> <a href="~/Vistas/Consultas/ListadoConsultas" runat="server"> <i class="fas fa-eye"></i> Ver</a> </li>
+   				        </ul> 
+   			        </li>
+   			    
+   		        </ul>
+   	        </nav>
+   	
+   	        <div id="content">
+                <section>
+                    <h4> <p> <asp:ContentPlaceHolder ID="tituloPagina" runat="server"></asp:ContentPlaceHolder> </p> </h4>
+                    <div class="line"></div>
+                </section>
+
+                <section class="sectionContenido">
+                    <asp:ContentPlaceHolder ID="contenidoPagina" runat="server"></asp:ContentPlaceHolder>
+                </section>
+   	        </div>   	
+
+       </div>
+    </form>
+</body>
+</html>

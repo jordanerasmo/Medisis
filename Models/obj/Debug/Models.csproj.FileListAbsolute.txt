@@ -1,0 +1,6 @@
+C:\Users\Erasm\source\repos\Medesis\Models\bin\Debug\Models.dll
+C:\Users\Erasm\source\repos\Medesis\Models\bin\Debug\Models.pdb
+C:\Users\Erasm\source\repos\Medesis\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
+C:\Users\Erasm\source\repos\Medesis\Models\obj\Debug\Models.dll
+C:\Users\Erasm\source\repos\Medesis\Models\obj\Debug\Models.pdb
+C:\Users\Erasm\source\repos\Medesis\Models\obj\Debug\Models.csprojAssemblyReference.cache

@@ -1,0 +1,435 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3A054554-EDAD-4495-BD47-F5058B3EF241}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Medesis</RootNamespace>
+    <AssemblyName>Medesis</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Text.Encodings.Web, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.5.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=5.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.5.0.1\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.4.1\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.3.3.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Js\consultas.js" />
+    <Content Include="Js\medicos.js" />
+    <Content Include="Js\menu.js" />
+    <Content Include="Js\pacientes.js" />
+    <Content Include="Scripts\Alertify JS\alertify.min.js" />
+    <Content Include="Scripts\Alertify JS\styles.css" />
+    <Content Include="Scripts\DataTables\Buttons-1.6.3\css\buttons.bootstrap.css" />
+    <Content Include="Scripts\DataTables\Buttons-1.6.3\css\buttons.bootstrap.min.css" />
+    <Content Include="Scripts\DataTables\Buttons-1.6.3\css\buttons.bootstrap4.css" />
+    <Content Include="Scripts\DataTables\Buttons-1.6.3\css\buttons.bootstrap4.min.css" />
+    <Content Include="Scripts\DataTables\Buttons-1.6.3\css\buttons.dataTables.css" />
+    <Content Include="Scripts\DataTables\Buttons-1.6.3\css\buttons.dataTables.min.css" />
+    <Content Include="Scripts\DataTables\Buttons-1.6.3\css\buttons.foundation.css" />
+    <Content Include="Scripts\DataTables\Buttons-1.6.3\css\buttons.foundation.min.css" />
+    <Content Include="Scripts\DataTables\Buttons-1.6.3\css\buttons.jqueryui.css" />
+    <Content Include="Scripts\DataTables\Buttons-1.6.3\css\buttons.jqueryui.min.css" />
+    <Content Include="Scripts\DataTables\Buttons-1.6.3\css\buttons.semanticui.css" />
+    <Content Include="Scripts\DataTables\Buttons-1.6.3\css\buttons.semanticui.min.css" />
+    <Content Include="Scripts\DataTables\Buttons-1.6.3\js\buttons.bootstrap.js" />
+    <Content Include="Scripts\DataTables\Buttons-1.6.3\js\buttons.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\Buttons-1.6.3\js\buttons.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\Buttons-1.6.3\js\buttons.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\Buttons-1.6.3\js\buttons.colVis.js" />
+    <Content Include="Scripts\DataTables\Buttons-1.6.3\js\buttons.colVis.min.js" />
+    <Content Include="Scripts\DataTables\Buttons-1.6.3\js\buttons.flash.js" />
+    <Content Include="Scripts\DataTables\Buttons-1.6.3\js\buttons.flash.min.js" />
+    <Content Include="Scripts\DataTables\Buttons-1.6.3\js\buttons.foundation.js" />
+    <Content Include="Scripts\DataTables\Buttons-1.6.3\js\buttons.foundation.min.js" />
+    <Content Include="Scripts\DataTables\Buttons-1.6.3\js\buttons.html5.js" />
+    <Content Include="Scripts\DataTables\Buttons-1.6.3\js\buttons.html5.min.js" />
+    <Content Include="Scripts\DataTables\Buttons-1.6.3\js\buttons.jqueryui.js" />
+    <Content Include="Scripts\DataTables\Buttons-1.6.3\js\buttons.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\Buttons-1.6.3\js\buttons.print.js" />
+    <Content Include="Scripts\DataTables\Buttons-1.6.3\js\buttons.print.min.js" />
+    <Content Include="Scripts\DataTables\Buttons-1.6.3\js\buttons.semanticui.js" />
+    <Content Include="Scripts\DataTables\Buttons-1.6.3\js\buttons.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\Buttons-1.6.3\js\dataTables.buttons.js" />
+    <Content Include="Scripts\DataTables\Buttons-1.6.3\js\dataTables.buttons.min.js" />
+    <Content Include="Scripts\DataTables\Buttons-1.6.3\swf\flashExport.swf" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.21\css\dataTables.bootstrap.css" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.21\css\dataTables.bootstrap.min.css" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.21\css\dataTables.bootstrap4.css" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.21\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.21\css\dataTables.foundation.css" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.21\css\dataTables.foundation.min.css" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.21\css\dataTables.jqueryui.css" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.21\css\dataTables.jqueryui.min.css" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.21\css\dataTables.semanticui.css" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.21\css\dataTables.semanticui.min.css" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.21\css\jquery.dataTables.css" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.21\css\jquery.dataTables.min.css" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.21\images\sort_asc.png" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.21\images\sort_asc_disabled.png" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.21\images\sort_both.png" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.21\images\sort_desc.png" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.21\images\sort_desc_disabled.png" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.21\js\dataTables.bootstrap.js" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.21\js\dataTables.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.21\js\dataTables.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.21\js\dataTables.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.21\js\dataTables.foundation.js" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.21\js\dataTables.foundation.min.js" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.21\js\dataTables.jqueryui.js" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.21\js\dataTables.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.21\js\dataTables.semanticui.js" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.21\js\dataTables.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.21\js\jquery.dataTables.js" />
+    <Content Include="Scripts\DataTables\DataTables-1.10.21\js\jquery.dataTables.min.js" />
+    <Content Include="Scripts\DataTables\datatables.min.css" />
+    <Content Include="Scripts\DataTables\datatables.min.js" />
+    <Content Include="Scripts\DataTables\JSZip-2.5.0\jszip.js" />
+    <Content Include="Scripts\DataTables\JSZip-2.5.0\jszip.min.js" />
+    <Content Include="Scripts\DataTables\pdfmake-0.1.36\pdfmake.js" />
+    <Content Include="Scripts\DataTables\pdfmake-0.1.36\pdfmake.min.js" />
+    <Content Include="Scripts\DataTables\pdfmake-0.1.36\vfs_fonts.js" />
+    <Content Include="Scripts\DataTables\Select-1.3.1\css\select.bootstrap.css" />
+    <Content Include="Scripts\DataTables\Select-1.3.1\css\select.bootstrap.min.css" />
+    <Content Include="Scripts\DataTables\Select-1.3.1\css\select.bootstrap4.css" />
+    <Content Include="Scripts\DataTables\Select-1.3.1\css\select.bootstrap4.min.css" />
+    <Content Include="Scripts\DataTables\Select-1.3.1\css\select.dataTables.css" />
+    <Content Include="Scripts\DataTables\Select-1.3.1\css\select.dataTables.min.css" />
+    <Content Include="Scripts\DataTables\Select-1.3.1\css\select.foundation.css" />
+    <Content Include="Scripts\DataTables\Select-1.3.1\css\select.foundation.min.css" />
+    <Content Include="Scripts\DataTables\Select-1.3.1\css\select.jqueryui.css" />
+    <Content Include="Scripts\DataTables\Select-1.3.1\css\select.jqueryui.min.css" />
+    <Content Include="Scripts\DataTables\Select-1.3.1\css\select.semanticui.css" />
+    <Content Include="Scripts\DataTables\Select-1.3.1\css\select.semanticui.min.css" />
+    <Content Include="Scripts\DataTables\Select-1.3.1\js\dataTables.select.js" />
+    <Content Include="Scripts\DataTables\Select-1.3.1\js\dataTables.select.min.js" />
+    <Content Include="Scripts\DataTables\Select-1.3.1\js\select.bootstrap.js" />
+    <Content Include="Scripts\DataTables\Select-1.3.1\js\select.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\Select-1.3.1\js\select.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\Select-1.3.1\js\select.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\Select-1.3.1\js\select.dataTables.js" />
+    <Content Include="Scripts\DataTables\Select-1.3.1\js\select.foundation.js" />
+    <Content Include="Scripts\DataTables\Select-1.3.1\js\select.foundation.min.js" />
+    <Content Include="Scripts\DataTables\Select-1.3.1\js\select.jqueryui.js" />
+    <Content Include="Scripts\DataTables\Select-1.3.1\js\select.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\Select-1.3.1\js\select.semanticui.js" />
+    <Content Include="Scripts\DataTables\Select-1.3.1\js\select.semanticui.min.js" />
+    <Content Include="Scripts\Moment\moment.min.js" />
+    <Content Include="Scripts\ValidateJs\jquery.validate.min.js" />
+    <Content Include="Vistas\Consultas\ListadoConsultas.aspx" />
+    <Content Include="Vistas\Medicos\ListadoMedicos.aspx" />
+    <Content Include="Vistas\Pacientes\ListadoPacientes.aspx" />
+    <Content Include="Vistas\Consultas\NuevaConsulta.aspx" />
+    <Content Include="css\estilos.css" />
+    <Content Include="Index.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\DataTables\Buttons-1.6.3\css\common.scss" />
+    <Content Include="Scripts\DataTables\Buttons-1.6.3\css\mixins.scss" />
+    <Content Include="Vistas\Medicos\NuevoMedico.aspx" />
+    <Content Include="Vistas\Pacientes\NuevoPaciente.aspx" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Site.Master" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Bundle.config" />
+    <Content Include="Site.Mobile.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Vistas\Consultas\ListadoConsultas.aspx.cs">
+      <DependentUpon>ListadoConsultas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Consultas\ListadoConsultas.aspx.designer.cs">
+      <DependentUpon>ListadoConsultas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Medicos\ListadoMedicos.aspx.cs">
+      <DependentUpon>ListadoMedicos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Medicos\ListadoMedicos.aspx.designer.cs">
+      <DependentUpon>ListadoMedicos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Pacientes\ListadoPacientes.aspx.cs">
+      <DependentUpon>ListadoPacientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Pacientes\ListadoPacientes.aspx.designer.cs">
+      <DependentUpon>ListadoPacientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Consultas\NuevaConsulta.aspx.cs">
+      <DependentUpon>NuevaConsulta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Consultas\NuevaConsulta.aspx.designer.cs">
+      <DependentUpon>NuevaConsulta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Medicos\NuevoMedico.aspx.cs">
+      <DependentUpon>NuevoMedico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Medicos\NuevoMedico.aspx.designer.cs">
+      <DependentUpon>NuevoMedico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Pacientes\NuevoPaciente.aspx.cs">
+      <DependentUpon>NuevoPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Pacientes\NuevoPaciente.aspx.designer.cs">
+      <DependentUpon>NuevoPaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Web.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Controllers\Controllers.csproj">
+      <Project>{92621f57-0817-4633-8a62-a4fc48228d8e}</Project>
+      <Name>Controllers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{39e2da01-0b74-4717-b759-8af9ae871c42}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54708</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:54708/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:54708/</IISAppRootUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,14 @@
+C:\Users\Erasm\source\repos\Medesis\Controllers\obj\Debug\Controllers.csprojAssemblyReference.cache
+C:\Users\Erasm\source\repos\Medesis\Controllers\obj\Debug\Controllers.csproj.CoreCompileInputs.cache
+C:\Users\Erasm\source\repos\Medesis\Controllers\bin\Debug\Controllers.dll.config
+C:\Users\Erasm\source\repos\Medesis\Controllers\bin\Debug\Controllers.dll
+C:\Users\Erasm\source\repos\Medesis\Controllers\bin\Debug\Controllers.pdb
+C:\Users\Erasm\source\repos\Medesis\Controllers\bin\Debug\EntityFramework.dll
+C:\Users\Erasm\source\repos\Medesis\Controllers\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Erasm\source\repos\Medesis\Controllers\bin\Debug\Models.dll
+C:\Users\Erasm\source\repos\Medesis\Controllers\bin\Debug\Models.pdb
+C:\Users\Erasm\source\repos\Medesis\Controllers\bin\Debug\EntityFramework.xml
+C:\Users\Erasm\source\repos\Medesis\Controllers\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Erasm\source\repos\Medesis\Controllers\obj\Debug\Controllers.csproj.CopyComplete
+C:\Users\Erasm\source\repos\Medesis\Controllers\obj\Debug\Controllers.dll
+C:\Users\Erasm\source\repos\Medesis\Controllers\obj\Debug\Controllers.pdb
